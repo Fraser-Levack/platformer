@@ -1,0 +1,146 @@
+# Movement tuning. Save while the game is running to apply changes.
+# Units: pixels and seconds (a tile is 32 px). Delete a line to use its default;
+# delete the file to regenerate it with every default.
+
+# ---------- Running ----------
+# Speed you reach almost immediately when you hold a direction.
+run_speed = 500
+# Speed you build up to by running without stopping.
+top_speed = 1000
+# Acceleration from standing up to run_speed.
+run_accel = 2600
+# Acceleration from run_speed up to top_speed (slow on purpose: momentum builds).
+build_accel = 140
+# Braking when you let go on the ground.
+ground_friction = 1700
+# Braking when you push against your motion (skid).
+turn_accel = 3000
+# Above top_speed (from slopes, boosts, landings) speed bleeds off this slowly.
+overspeed_drag = 260
+# Nothing ever moves faster than this.
+hard_cap = 1400
+
+# ---------- Slopes ----------
+# How much slopes speed you up / slow you down while running (1 = full gravity).
+slope_run_factor = 0.35
+# Same, while sliding: slides really pick up speed downhill.
+slope_slide_factor = 1
+# Jumping on an uphill keeps this much of the upward slope velocity.
+slope_jump_keep = 0.5
+
+# ---------- Jumping ----------
+# Full jump height in tiles (holding jump).
+jump_height = 3.4
+# Seconds to reach the top of a full jump.
+jump_time_to_apex = 0.36
+# Extra jump height in tiles at top speed (scales from run_speed).
+speed_jump_bonus = 0.7
+# Gravity multiplier while falling.
+fall_gravity_mult = 1.55
+# Gravity multiplier near the top of a held jump (hang time).
+apex_gravity_mult = 0.55
+# Vertical speed counted as near the top of a jump.
+apex_threshold = 80
+# Releasing jump early keeps this much upward speed.
+jump_cut = 0.45
+max_fall = 900
+# Fall speed while holding down in the air.
+fast_fall = 1250
+coyote_time = 0.1
+jump_buffer = 0.12
+
+# ---------- Air ----------
+# Steering toward run_speed in the air.
+air_accel = 1800
+# Braking in the air with no input (low: you keep your momentum).
+air_drag = 220
+# Above run_speed in the air, speed bleeds off this slowly.
+air_overspeed_drag = 20
+
+# ---------- Perfect landing ----------
+# Jump within this many seconds of landing (or buffer it) for a speed boost.
+perfect_window = 0.09
+# Speed added by a perfect landing jump.
+perfect_boost = 45
+# Perfect boosts can't push you past top_speed times this.
+perfect_cap_mult = 1.2
+# Minimum speed for a landing jump to count.
+perfect_min_speed = 200
+
+# ---------- Slide ----------
+# Holding down above this ground speed slides; below it you crouch.
+slide_min_speed = 110
+slide_friction = 160
+# Braking when you hold against a slide.
+slide_brake = 900
+# Speed added when a slide starts (once per slide_boost_cooldown).
+slide_boost = 50
+slide_boost_cooldown = 0.6
+# A slide this slow becomes a crouch.
+slide_stop_speed = 50
+# Crawling speed while crouched.
+crawl_speed = 110
+# Long jump (jump out of a slide): height in tiles.
+long_jump_height = 2.3
+# Long jump horizontal speed: slide speed times this...
+long_jump_mult = 1.1
+# ...but at least this.
+long_jump_min = 480
+
+# ---------- Walls ----------
+# Hit a wall at least this fast to run up it.
+wallrun_min_speed = 260
+# Upward speed from a wall-run = horizontal speed times this...
+wallrun_conversion = 1
+# ...clamped between these.
+wallrun_min_up = 420
+wallrun_max_up = 760
+# Gravity multiplier while running up a wall.
+wallrun_gravity_mult = 0.6
+# 1 = running into a wall on the ground also starts a wall-run.
+ground_wallrun = 1
+# Max fall speed while sliding down a wall (holding toward it).
+wall_slide_speed = 160
+# Wall jump away speed...
+wall_kick_x = 400
+# ...plus this fraction of the speed you hit the wall with.
+wall_kick_keep = 0.45
+wall_kick_y = 560
+# Reduced air control right after a wall jump.
+wall_kick_lock = 0.12
+wall_coyote = 0.1
+
+# ---------- Vault & mantle ----------
+# Running into a step at most this many tiles high hops over it without losing speed.
+vault_max_height = 1.05
+# Minimum speed to vault (slower, you just bump into it).
+vault_min_speed = 150
+# In the air, grab ledges whose top is at most this far above your feet (px).
+mantle_reach = 20
+# Speed you keep moving at after a mantle (at least).
+mantle_speed = 220
+
+# ---------- Dash ----------
+dash_speed = 760
+dash_time = 0.14
+dash_cooldown = 0.2
+# Horizontal speed kept when a dash ends (fraction).
+dash_end_keep = 0.85
+# 1 = touching the ground refills your dash (orbs refill it in mid-air).
+dash_ground_refill = 1
+# Landing out of a downward dash: slide speed = dash speed times this.
+wavedash_mult = 1.1
+
+# ---------- Bounce & pickups ----------
+bounce_height = 5
+bounce_high_height = 6.5
+air_jump_height = 3
+stomp_height = 1.8
+stomp_high_height = 3.8
+
+# ---------- Camera ----------
+# How much the view zooms out at top speed (0.3 = 30% more visible).
+zoom_out = 0.3
+# How far ahead the camera looks, in seconds of travel.
+look_ahead_time = 0.35
+look_ahead_max = 260

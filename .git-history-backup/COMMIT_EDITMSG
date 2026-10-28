@@ -1,0 +1,18 @@
+Momentum movement rewrite: slopes, wall-runs, vaults, dash, live tuning
+
+Replace the precision controller (sprint button, charged jump, seven jump
+kinds) with a momentum-based one where every move feeds speed into the next:
+
+- Ground speed along the surface; speed builds the longer you run
+- Ramps (steep and gentle) in the level format, editor and renderer;
+  downhill speeds you up, ramp lips launch you
+- Landings keep speed; jumping on landing gives a perfect-landing boost
+- Slides gain speed downhill and carry into long jumps or a run
+- Fast wall hits become wall-runs; low steps are vaulted; ledges mantled
+- Air dash keeps existing momentum and refills on the ground
+- Camera looks ahead and zooms out with speed; speed lines
+- All values in assets/tuning.txt, hot-reloaded while playing
+- F1 debug overlay with a speed graph; --debug and --screenshot flags
+- Movement gym level teaching each move
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
